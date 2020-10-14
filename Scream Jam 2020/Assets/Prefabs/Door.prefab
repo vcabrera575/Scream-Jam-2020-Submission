@@ -112,8 +112,8 @@ MonoBehaviour:
   objectDistance: 4
   volume: 1
   playerCamera: {fileID: 0}
-  doorSoundSource: {fileID: 0}
-  doorSound: {fileID: 0}
+  doorSoundSource: {fileID: 3033965548444609122}
+  doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
 --- !u!82 &3033965548444609122
 AudioSource:
   m_ObjectHideFlags: 0
