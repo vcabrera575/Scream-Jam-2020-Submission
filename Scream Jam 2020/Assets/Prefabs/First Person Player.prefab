@@ -41,9 +41,10 @@ GameObject:
   - component: {fileID: 6185129495954316456}
   - component: {fileID: 6185129495954316457}
   - component: {fileID: 6185129495954316462}
+  - component: {fileID: 3688116413869269033}
   m_Layer: 0
   m_Name: First Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +100,18 @@ MonoBehaviour:
   speed: 12
   gravity: -9.81
   jumpHeight: 1.5
+--- !u!114 &3688116413869269033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185129495954316463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c50bcd704b8774f9009471fcafcdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6185129496396879988
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +224,7 @@ GameObject:
   - component: {fileID: 6185129497435673380}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

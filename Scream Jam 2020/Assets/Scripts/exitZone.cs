@@ -13,25 +13,10 @@ public class exitZone : MonoBehaviour
     // Start is called before the first frame update
     void Interact()
     {
+        if (gameManager.gameTimer >= 0)
+            gameManager.SetMessage("Are you sure you want to exit early?");
+        else
+            gameManager.SetMessage("You're too late!");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 origin = playerCamera.transform.position;
-        Vector3 direction = playerCamera.transform.forward;
-        RaycastHit hit;
-
-        if (Input.GetButtonDown("Fire1") && Physics.Raycast(origin, direction, out hit, objectDistance))
-        {
-            // DO something!
-            if (hit.transform.tag == "ExitZone")
-            {
-                if (gameManager.gameTimer >= 0)
-                    gameManager.SetMessage("Are you sure you want to exit early?");
-                else
-                    gameManager.SetMessage("You're too late!");
-            }
-        }
-    }
 }

@@ -108,8 +108,8 @@ GameObject:
   - component: {fileID: 1265878529541835788}
   - component: {fileID: 1265878529541835789}
   - component: {fileID: 1265878529541835790}
-  - component: {fileID: 1265878529541835791}
   - component: {fileID: 1265878528429845665}
+  - component: {fileID: 1064364554583189856}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -191,26 +191,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1265878529541835791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265878529541835784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abb54d91133c9846bfd1bc3f6e3eefa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasBeenKnocked: 0
-  knockCooldown: 5
-  objectDistance: 4
-  volume: 1
-  candies: 1
-  playerCamera: {fileID: 0}
-  doorSoundSource: {fileID: 1265878528429845665}
-  doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
 --- !u!82 &1265878528429845665
 AudioSource:
   m_ObjectHideFlags: 0
@@ -307,6 +287,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1064364554583189856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265878529541835784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abb54d91133c9846bfd1bc3f6e3eefa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBeenKnocked: 0
+  volume: 1
+  candies: 3
+  doorSoundSource: {fileID: 1265878528429845665}
+  doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
+  doorLightOne: {fileID: 1265878530053188613}
+  doorLightTwo: {fileID: 1265878529996695079}
 --- !u!1 &1265878529996695073
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +317,7 @@ GameObject:
   - component: {fileID: 1265878529996695072}
   - component: {fileID: 1265878529996695079}
   m_Layer: 0
-  m_Name: Point Light (1)
+  m_Name: DoorLights (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,7 +331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265878529996695073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2553333, y: 0.048000004, z: 0.5800002}
+  m_LocalPosition: {x: -0.25533333, y: 0.048000004, z: 0.5800002}
   m_LocalScale: {x: 0.06666667, y: 0.2, z: 0.06666667}
   m_Children: []
   m_Father: {fileID: 1265878528964301048}
@@ -410,7 +409,7 @@ GameObject:
   - component: {fileID: 1265878530053188614}
   - component: {fileID: 1265878530053188613}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: DoorLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,14 +8,13 @@ public class GameController : MonoBehaviour
     public int candy = 0;
     public float gameTimer = 100f;
     public string message = "";
-    public Text screenMessage;
 
     // Game states
     bool inProgress = true;
     bool gameEnded = false;
     bool timerEnded = false;
 
-    void Star()
+    void Start()
     {
         inProgress = true;
         gameEnded = false;
