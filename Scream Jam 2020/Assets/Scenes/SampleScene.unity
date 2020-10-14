@@ -1430,6 +1430,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1293226029}
+    - target: {fileID: 1265878529541835791, guid: 3fbdcd4757bd6194f8d3fccf67aff89b,
+        type: 3}
+      propertyPath: candies
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fbdcd4757bd6194f8d3fccf67aff89b, type: 3}
 --- !u!1001 &1676220217
@@ -1942,7 +1947,7 @@ PrefabInstance:
     - target: {fileID: 4297347230166864132, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.66
+      value: -43.24
       objectReference: {fileID: 0}
     - target: {fileID: 4297347230166864132, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}

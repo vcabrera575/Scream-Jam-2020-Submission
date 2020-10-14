@@ -5,11 +5,11 @@ using UnityEngine;
 public class PickupCandy : MonoBehaviour
 {
     public int value = 3;
-    void OnCollisionEnter(Collision collisionInfo)
+    void Update()
     {
-        if (collisionInfo.collider.tag == "Player")
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (Vector3.Distance(playerPosition, transform.position) <= 2f)
         {
-            //add candy
             GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
             Destroy(gameObject);
         }
