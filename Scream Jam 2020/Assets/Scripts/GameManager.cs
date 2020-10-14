@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int candy = 0;
-    public float gameTimer = 100f;
-
-
     // Start is called before the first frame update
     void Start()
     {
