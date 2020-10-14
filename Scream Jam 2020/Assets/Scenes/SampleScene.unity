@@ -344,6 +344,7 @@ MonoBehaviour:
   candy: 0
   gameTimer: 100
   message: 
+  screenMessage: {fileID: 0}
 --- !u!4 &347817299
 Transform:
   m_ObjectHideFlags: 0
@@ -995,7 +996,7 @@ PrefabInstance:
     - target: {fileID: 1976197758573671627, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.86541
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 1976197758573671627, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
@@ -1005,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 1976197758573671627, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.334372
+      value: 14.6
       objectReference: {fileID: 0}
     - target: {fileID: 1976197758573671627, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
@@ -1052,6 +1053,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 1976197758573671637, guid: 5cbc717107afd4f438373cd2e90d927e,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 347817298}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbc717107afd4f438373cd2e90d927e, type: 3}
 --- !u!1 &1933197096
@@ -1198,7 +1204,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b782d7599b86c8747b67ee1a9ca2f804, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
