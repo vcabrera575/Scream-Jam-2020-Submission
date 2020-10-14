@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     float knockTimer = 0f;
     public float objectDistance = 2f; // Set distance for how far away the player is from interactable object
     public float volume = 1f;
+    public int candies = 3;
 
     public Camera playerCamera;
     public AudioSource doorSoundSource;
@@ -21,7 +22,20 @@ public class Door : MonoBehaviour
     {
         hasBeenKnocked = true;
         doorSoundSource.PlayOneShot(doorSound, volume);
+        MakeCandy();
     }
+    //makes candy and throws it at the player
+    void MakeCandy()
+    {
+        for(int i = 0; i<candies; i++)
+        {
+            Transform c = GameObject.Find("Candy").transform;
+            Transform cm = Instantiate(c, transform.position + (transform.forward*1.5f),transform.rotation);
+            cm.position = new Vector3(cm.position.x, cm.position.y + 3, cm.position.z);
+            cm.position += Random.insideUnitSphere * 0.5f;
+        }
+    }
+
 
     void Update()
     {

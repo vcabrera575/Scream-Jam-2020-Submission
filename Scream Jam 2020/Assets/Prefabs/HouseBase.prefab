@@ -207,6 +207,7 @@ MonoBehaviour:
   knockCooldown: 5
   objectDistance: 4
   volume: 1
+  candies: 1
   playerCamera: {fileID: 0}
   doorSoundSource: {fileID: 1265878528429845665}
   doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
