@@ -9,6 +9,10 @@ public class Door : MonoBehaviour
     public float volume = 1f;
     public int candies = 3;
 
+    // Cooldowns for knocking
+    float knockTimer = 0f;
+    public float knockCooldown = 5f; // Time in seconds
+
     public AudioSource doorSoundSource;
     public AudioClip doorSound;
     public Light doorLightOne;
@@ -16,15 +20,16 @@ public class Door : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Interact()
+    void Interact(bool debugState)
     {
         if (!hasBeenKnocked)
         {
-            hasBeenKnocked = true;
+            //hasBeenKnocked = true;
             doorSoundSource.PlayOneShot(doorSound, volume);
             MakeCandy();
             doorLightOne.enabled = false;
             doorLightTwo.enabled = false;
+            knockTimer = knockCooldown;
         }
     }
     //makes candy and throws it at the player
