@@ -6,8 +6,6 @@ public class PlayerControls : MonoBehaviour
 {
     public Camera playerCamera;
     public float objectDistance = 2f; // Set distance for how far away the player is from interactable object
-    float knockTimer = 0f;
-    public float knockCooldown = 5f; // Time in seconds
 
 
     // Update is called once per frame
@@ -20,12 +18,11 @@ public class PlayerControls : MonoBehaviour
             Vector3 direction = playerCamera.transform.forward;
             RaycastHit hit;
 
-            if (Physics.Raycast(origin, direction, out hit, objectDistance) && knockTimer <= 0)
+            if (Physics.Raycast(origin, direction, out hit, objectDistance))
             {
                 // Player knocked on door
                 if (hit.transform.tag == "Door")
                 {
-                    knockTimer = knockCooldown;
                     hit.collider.gameObject.SendMessage("Interact");
                 }
 
@@ -37,7 +34,5 @@ public class PlayerControls : MonoBehaviour
             }
         }
 
-        //count down knock timer
-        knockTimer -= Time.deltaTime;
     }
 }

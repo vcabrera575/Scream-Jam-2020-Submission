@@ -20,9 +20,9 @@ public class Door : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Interact(bool debugState)
+    void Interact()
     {
-        if (!hasBeenKnocked)
+        if (!hasBeenKnocked && knockTimer <= 0)
         {
             //hasBeenKnocked = true;
             doorSoundSource.PlayOneShot(doorSound, volume);
@@ -44,4 +44,9 @@ public class Door : MonoBehaviour
         }
     }
 
+    void update()
+    {
+        //count down knock timer
+        knockTimer -= Time.deltaTime;
+    }
 }
