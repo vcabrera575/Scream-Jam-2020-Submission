@@ -3,7 +3,12 @@ guid: 5abb54d91133c9846bfd1bc3f6e3eefa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - candy: {fileID: 2862625046210209135, guid: f408d77c4b3db2240b0ae87701ae1832, type: 3}
+  - doorSoundSource: {instanceID: 0}
+  - doorSound: {instanceID: 0}
+  - doorLightOne: {instanceID: 0}
+  - doorLightTwo: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public int candy = 0;
+    float gameStartTime = 0f;
     public float gameTimer = 100f;
-    public float followerWaitTime = 15f;
     public string message = "";
 
-    float gameStartTime = 0f;
+    public bool followPlayer = false;
+    public float followerWaitTime = 15f;
+    public float followerSpeed = 2f;
+
+    public int candy = 0;
 
     // Game states
     bool inProgress = true;
     bool gameEnded = false;
     bool timerEnded = false;
-    public bool followPlayer = false;
 
     void Start()
     {
@@ -33,9 +35,10 @@ public class GameController : MonoBehaviour
         //count down timer
         gameTimer -= Time.deltaTime;
 
-        if (gameTimer <= gameStartTime - followerWaitTime)
+        if (gameTimer <= gameStartTime - followerWaitTime || gameTimer <= 0)
             followPlayer = true;
-
+        if (gameTimer < 0)
+            followerSpeed += (0.005f);
     }
 
     //get candies
