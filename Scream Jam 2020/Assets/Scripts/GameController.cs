@@ -52,8 +52,7 @@ public class GameController : MonoBehaviour
 
         if (gameTimer <= gameStartTime - followerWaitTime || gameTimer <= 0)
             followPlayer = true;
-        if (gameTimer < 0)
-            followerSpeed += (0.005f);
+        
 
         CheckFullness();
     }

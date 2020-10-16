@@ -55,6 +55,12 @@ public class FollowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //times up so always follow player
+        if (gameController.gameTimer < 0)
+        {
+            chaseState = Chase.Chasing;
+            playerPos = player.position;
+        }
         //chasing player
         if (chaseState == Chase.Chasing && gameController.followPlayer)
             FollowPlayer();
