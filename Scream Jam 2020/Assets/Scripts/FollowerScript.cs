@@ -8,7 +8,6 @@ public class FollowerScript : MonoBehaviour
     public GameController gameController;
     public Transform player;
 
-    public float followSpeed = 2f;
     public float minDistance = 5f;
     public float maxDistance = 5f;
 

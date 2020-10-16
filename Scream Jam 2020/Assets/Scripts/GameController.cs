@@ -5,15 +5,30 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    // Game timer management
     float gameStartTime = 0f;
     public float gameTimer = 100f;
     public string message = "";
 
+    // Follower Variables
     public bool followPlayer = false;
     public float followerWaitTime = 15f;
-    public float followerSpeed = 2f;
+    public float followerSpeed = 8f;
 
+    // Candy management
     public int candy = 0;
+    public float candySpeedBoost = 2f;
+    public float candySaturation = 34f; // A number that is more or less close to 3 * this = more than 100;
+
+    // Player Variables
+    public float playerSpeed = 12f;
+    public float playerBaseSpeed = 12f;
+
+    public float playerFullness = 0f;
+    public float maxFullness = 100f;
+    public bool hasEaten = false;
+    public bool isSick = false;
+    public float sickSpeed = 8f;
 
     // Game states
     bool inProgress = true;
@@ -39,12 +54,51 @@ public class GameController : MonoBehaviour
             followPlayer = true;
         if (gameTimer < 0)
             followerSpeed += (0.005f);
+
+        CheckFullness();
     }
 
+    public void CheckFullness()
+    {
+
+        if (hasEaten && !isSick && playerFullness > maxFullness)
+        {
+            playerSpeed = sickSpeed;
+            isSick = true;
+        }
+        else if (playerFullness <= 34)
+        {
+            playerSpeed = playerBaseSpeed + (1 * candySpeedBoost);
+        }
+        else if (playerFullness > 34)
+        {
+            playerSpeed = playerBaseSpeed + (2 * candySpeedBoost);
+        }
+
+        if (playerFullness == 0)
+        {
+            playerSpeed = playerBaseSpeed;
+        }
+
+        if (playerFullness > 0)
+            playerFullness -= 6 * Time.deltaTime;
+        if (playerFullness < 0)
+            playerFullness = 0;
+    }
     //get candies
     public void GetCandy(int amount)
     {
         candy += amount;
+    }
+
+    public void EatCandy()
+    {
+        if (playerFullness < 100 && !isSick && candy > 0)
+        {
+            playerFullness += candySaturation;
+            candy--;
+            hasEaten = true;
+        }
     }
 
     // Set message that appears on screen

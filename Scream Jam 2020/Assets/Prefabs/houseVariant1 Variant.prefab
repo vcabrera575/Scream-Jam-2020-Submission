@@ -210,6 +210,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.099999, y: 9.509511, z: 14.099999}
   m_Center: {x: 0, y: 1.6897556, z: 0}
+--- !u!65 &4545201334198037746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5869214733226467558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2538378, y: 3.7280755, z: 0.25119495}
+  m_Center: {x: 0.1233505, y: 2.1618526, z: 7.161484}
 --- !u!82 &6524274743987948160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -318,26 +331,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abb54d91133c9846bfd1bc3f6e3eefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   hasBeenKnocked: 0
-  volume: 1
+  candy: {fileID: 0}
   candies: 3
+  knockCooldown: 5
   doorSoundSource: {fileID: 6524274743987948160}
-  doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
+  doorSound: {fileID: 8300000, guid: 9624c81816a34d8498437ebf9ed50b38, type: 3}
+  volume: 1
   doorLightOne: {fileID: 2761839764174557621}
   doorLightTwo: {fileID: 2761839763996433303}
---- !u!65 &4545201334198037746
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5869214733226467558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.2538378, y: 3.7280755, z: 0.25119495}
-  m_Center: {x: 0.1233505, y: 2.1618526, z: 7.161484}
 --- !u!65 &8178268322392286841
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -503,6 +506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: houseVariant1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7574914d2d62b9c47b39077b7587a0f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7574914d2d62b9c47b39077b7587a0f4, type: 3}
