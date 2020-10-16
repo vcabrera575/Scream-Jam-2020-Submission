@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public Camera playerCamera;
+    public GameController gameController;
     public float objectDistance = 2f; // Set distance for how far away the player is from interactable object
 
 
@@ -33,6 +34,12 @@ public class PlayerControls : MonoBehaviour
                     hit.collider.gameObject.SendMessage("Interact");
                 }
             }
+        }
+
+        // If player presses 
+        if (Input.GetButtonDown("Fire2"))
+        {
+            gameController.EatCandy();
         }
 
     }

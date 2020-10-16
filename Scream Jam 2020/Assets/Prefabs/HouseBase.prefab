@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1265878528964301051}
   m_Layer: 0
   m_Name: HouseBase
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,7 +212,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 99.77
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -262,7 +262,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.0027777778
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -299,11 +299,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abb54d91133c9846bfd1bc3f6e3eefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   hasBeenKnocked: 0
-  volume: 1
+  candy: {fileID: 0}
   candies: 3
+  knockCooldown: 5
   doorSoundSource: {fileID: 1265878528429845665}
-  doorSound: {fileID: 8300000, guid: e930fbf62818ade459be4d751dece8b4, type: 3}
+  doorSound: {fileID: 8300000, guid: 9624c81816a34d8498437ebf9ed50b38, type: 3}
+  volume: 1
   doorLightOne: {fileID: 1265878530053188613}
   doorLightTwo: {fileID: 1265878529996695079}
 --- !u!1 &1265878529996695073
