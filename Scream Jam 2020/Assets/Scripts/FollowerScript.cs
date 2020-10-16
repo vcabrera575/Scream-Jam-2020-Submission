@@ -18,8 +18,8 @@ public class FollowerScript : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.position) >= minDistance)
         {
-            //transform.position += transform.forward * followSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, player.position, followSpeed * Time.deltaTime);
+            // Move the enemy towards the player.
+            transform.position = Vector3.MoveTowards(transform.position, player.position, (gameController.followerSpeed * Time.deltaTime) );
             if (Vector3.Distance(transform.position, player.position) <= maxDistance)
             {
                 // Player is caught!

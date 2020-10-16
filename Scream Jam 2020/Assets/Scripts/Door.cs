@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public Transform player;
     public bool hasBeenKnocked = false;
-    public float volume = 1f;
+
+    public GameObject candy;
     public int candies = 3;
 
     // Cooldowns for knocking
@@ -15,6 +17,8 @@ public class Door : MonoBehaviour
 
     public AudioSource doorSoundSource;
     public AudioClip doorSound;
+    public float volume = 1f;
+
     public Light doorLightOne;
     public Light doorLightTwo;
 
@@ -37,8 +41,7 @@ public class Door : MonoBehaviour
     {
         for(int i = 0; i<candies; i++)
         {
-            Transform c = GameObject.Find("Candy").transform;
-            Transform cm = Instantiate(c, transform.position + (transform.forward*1.5f),transform.rotation);
+            Transform cm = Instantiate(candy.transform, (player.transform.position + (transform.forward*1.5f)),transform.rotation);
             cm.position = new Vector3(cm.position.x, cm.position.y + 3, cm.position.z);
             cm.position += Random.insideUnitSphere * 0.5f;
         }
