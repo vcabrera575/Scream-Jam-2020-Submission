@@ -10,7 +10,6 @@ public class exitZone : MonoBehaviour
     // Start is called before the first frame update
     void Interact()
     {
-
         if (gameManager.gameTimer >= 0)
         {
             gameManager.SetMessage("Are you sure you want to exit early?");
@@ -18,6 +17,13 @@ public class exitZone : MonoBehaviour
         else
         {
             gameManager.SetMessage("You're too late!");
+        }
+
+        if (gameManager.candy > 0)
+        {
+            gameManager.highScore += gameManager.candy;
+            gameManager.candy = 0;
+            gameManager.SetMessage("Candy dumped!");
         }
     }
 

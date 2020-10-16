@@ -56,7 +56,7 @@ public class FollowerScript : MonoBehaviour
     void Update()
     {
         //times up so always follow player
-        if (gameController.gameTimer < 0)
+        if (gameController.gameTimer <= 0)
         {
             chaseState = Chase.Chasing;
             playerPos = player.position;
