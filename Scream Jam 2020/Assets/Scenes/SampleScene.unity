@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 56567dcbfe363d14bb62e79ba77126ad, type: 2}
 --- !u!1 &171135956
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   message: 
   followPlayer: 0
   followerWaitTime: 0
-  followerSpeed: 2
+  followerSpeed: 10
   candy: 0
   candySpeedBoost: 2
   candySaturation: 34
@@ -2215,6 +2215,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 8400646275438672458, guid: 5cbc717107afd4f438373cd2e90d927e,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 347817298}
     - target: {fileID: 8400646275438672459, guid: 5cbc717107afd4f438373cd2e90d927e,
         type: 3}
       propertyPath: m_NavMeshLayer
