@@ -21,7 +21,7 @@ public class FollowerScript : MonoBehaviour
     void FollowPlayer()
     {
 
-        transform.LookAt(player.position);
+        //transform.LookAt(player.position);
         agent.speed = gameController.followerSpeed;
 
         Vector3 dir = player.position - transform.position;
@@ -34,7 +34,7 @@ public class FollowerScript : MonoBehaviour
             //player isn't in sight so wander
             if (Physics.Raycast(transform.position, dir, out hit))
             {
-                if (hit.transform.tag != "Player")
+                if (hit.transform.tag != "Player" || !InLineOfSight())
                 {
                     chaseState = Chase.Wandering;
                 }
@@ -43,7 +43,7 @@ public class FollowerScript : MonoBehaviour
         //update player position if in line of sight
         if (Physics.Raycast(transform.position, dir, out hit))
         {
-            if (hit.transform.tag == "Player")
+            if (hit.transform.tag == "Player" && InLineOfSight())
             {
                 playerPos = player.position;
             }
@@ -71,12 +71,21 @@ public class FollowerScript : MonoBehaviour
         Debug.DrawRay(transform.position, dir, Color.white, 0.1f, false);
         if (Physics.Raycast(transform.position, dir, out hit))
         {
-            if (hit.transform.tag == "Player")
+            if (hit.transform.tag == "Player" && InLineOfSight())
             {
                 chaseState = Chase.Chasing;
             }
 
         }
+    }
+
+    //see if player is in line of sight
+    bool InLineOfSight()
+    {
+        Vector3 targetDir = player.position - transform.position;
+        float angle = Vector3.Angle(targetDir, transform.forward);
+
+        return (angle < 20f);
     }
 
 }

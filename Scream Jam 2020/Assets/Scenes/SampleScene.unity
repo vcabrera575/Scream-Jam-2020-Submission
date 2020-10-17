@@ -244,11 +244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70cac408ab5a044b886769fa3d003ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimer: 20
+  gameTimer: 60
   message: 
   followPlayer: 0
   followerWaitTime: 0
-  followerSpeed: 10
+  followerSpeed: 12
   candy: 0
   candySpeedBoost: 2
   candySaturation: 34
