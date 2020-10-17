@@ -10,8 +10,12 @@ public class FollowerScript : MonoBehaviour
 
     public float minDistance = 5f;
     public float maxDistance = 5f;
+    float searchTimeMax = 5f;
+    float searchTime = 5f;
+    float incrementSearch = 0f; //used to determine when to change direction when searching
+    float incrementSearchAmount = 1f;
 
-    enum Chase { Chasing, Wandering};
+    enum Chase { Chasing, Wandering, Searching};
     Chase chaseState = Chase.Chasing; //0 = chasing player, 1 = wandering
 
     private void Start()
@@ -20,7 +24,6 @@ public class FollowerScript : MonoBehaviour
     }
     void FollowPlayer()
     {
-
         //transform.LookAt(player.position);
         agent.speed = gameController.followerSpeed;
 
@@ -29,14 +32,16 @@ public class FollowerScript : MonoBehaviour
         //near position
         if (Vector3.Distance(transform.position, playerPos) <= maxDistance)
         {
-            // Player is caught!
-            gameController.Caught();
-            //player isn't in sight so wander
+            //player isn't in sight so search for a little bit
             if (Physics.Raycast(transform.position, dir, out hit))
             {
                 if (hit.transform.tag != "Player" || !InLineOfSight())
                 {
-                    chaseState = Chase.Wandering;
+                    chaseState = Chase.Searching;
+                    searchTime = searchTimeMax;
+                    incrementSearch = 0f;
+                    incrementSearchAmount = 0f;
+                    Debug.Log("Searching");
                 }
             }
         }
@@ -52,6 +57,41 @@ public class FollowerScript : MonoBehaviour
         //actually move
         agent.SetDestination(playerPos);
     }
+
+    void SearchPlayer()
+    {
+        searchTime -= Time.deltaTime;
+        incrementSearch += Time.deltaTime;
+        //every 1 second change look direction
+        if (incrementSearchAmount < incrementSearch)
+        {
+            incrementSearchAmount += 1f;
+            transform.Rotate(0f, Random.Range(0.0f, 360.0f), 0f);
+        }
+        //check if player is in sight
+        Vector3 dir = player.position - transform.position;
+        RaycastHit hit;
+        //near position
+        if (Vector3.Distance(transform.position, playerPos) <= maxDistance)
+        {
+            //player isn't in sight so search for a little bit
+            if (Physics.Raycast(transform.position, dir, out hit))
+            {
+                if (hit.transform.tag == "Player" && InLineOfSight())
+                {
+                    chaseState = Chase.Chasing;
+                    searchTime = searchTimeMax;
+                }
+            }
+        }
+        //failed to find, so start wandering
+        if (searchTime <= 0)
+        {
+            chaseState = Chase.Wandering;
+            Debug.Log("Wandering");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -64,7 +104,9 @@ public class FollowerScript : MonoBehaviour
         //chasing player
         if (chaseState == Chase.Chasing && gameController.followPlayer)
             FollowPlayer();
-
+        //search for player
+        if (chaseState == Chase.Searching && gameController.followPlayer)
+            SearchPlayer();
         //found player so start chasing
         Vector3 dir = player.position - transform.position;
         RaycastHit hit;
@@ -85,7 +127,7 @@ public class FollowerScript : MonoBehaviour
         Vector3 targetDir = player.position - transform.position;
         float angle = Vector3.Angle(targetDir, transform.forward);
 
-        return (angle < 20f);
+        return (angle < 90f);
     }
 
 }
