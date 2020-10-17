@@ -41,7 +41,6 @@ public class FollowerScript : MonoBehaviour
                     searchTime = searchTimeMax;
                     incrementSearch = 0f;
                     incrementSearchAmount = 0f;
-                    Debug.Log("Searching");
                 }
             }
         }
