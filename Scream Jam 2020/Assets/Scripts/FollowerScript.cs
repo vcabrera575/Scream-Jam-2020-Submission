@@ -6,6 +6,8 @@ public class FollowerScript : MonoBehaviour
     public GameController gameController;
     public NavMeshAgent agent;
     public Transform player;
+    public GameObject[] waypoints;
+    public GameObject destination;
     Vector3 playerPos;
 
     public float minDistance = 5f;
@@ -20,7 +22,11 @@ public class FollowerScript : MonoBehaviour
 
     private void Start()
     {
+        //get initial player position
         playerPos = player.position;
+
+        //get array of waypoints
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
     }
     void FollowPlayer()
     {
@@ -91,6 +97,51 @@ public class FollowerScript : MonoBehaviour
         }
     }
 
+    void Wandering()
+    {
+        //if all waypoints are visited reset them
+        int visitedCount = 0;
+        for(int i = 0; i<waypoints.Length; i++)
+        {
+            if (waypoints[i].GetComponent<WaypointScript>().BeenTo == true)
+                visitedCount++;
+        }
+        if (visitedCount == waypoints.Length)
+        {
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                waypoints[i].GetComponent<WaypointScript>().BeenTo = false;
+            }
+        }
+        //search for closest waypoint
+        if (destination == null || destination.GetComponent<WaypointScript>().BeenTo == true)
+        {
+            float dist = Vector3.Distance(waypoints[0].transform.position, transform.position);
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                float tempDist = Vector3.Distance(waypoints[i].transform.position, transform.position);
+                //make sure it's not already visited
+                if (waypoints[i].GetComponent<WaypointScript>().BeenTo == false)
+                {
+                    destination = waypoints[i];
+                }
+                if ((tempDist <= dist) && waypoints[i].GetComponent<WaypointScript>().BeenTo == false)
+                {
+                    dist = tempDist;
+                    destination = waypoints[i];
+                }
+            }
+        }
+        //go towards waypoint
+        agent.SetDestination(destination.transform.position);
+        //when close to it, set its status to visited
+        float mdist = Vector3.Distance(destination.transform.position, transform.position);
+        if (mdist < 3f)
+        {
+            destination.GetComponent<WaypointScript>().BeenTo = true;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -106,6 +157,9 @@ public class FollowerScript : MonoBehaviour
         //search for player
         if (chaseState == Chase.Searching && gameController.followPlayer)
             SearchPlayer();
+        //wandering
+        if (chaseState == Chase.Wandering && gameController.followPlayer)
+            Wandering();
         //found player so start chasing
         Vector3 dir = player.position - transform.position;
         RaycastHit hit;
