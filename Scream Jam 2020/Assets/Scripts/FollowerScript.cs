@@ -10,6 +10,11 @@ public class FollowerScript : MonoBehaviour
     public GameObject destination;
     Vector3 playerPos;
 
+    public AudioSource audio;
+    public AudioClip wanderSound;
+    public AudioClip chaseSound;
+    public AudioClip searchSound;
+
     public float minDistance = 5f;
     public float maxDistance = 5f;
     float searchTimeMax = 5f;
@@ -22,6 +27,9 @@ public class FollowerScript : MonoBehaviour
 
     private void Start()
     {
+        //get audio source
+        audio = GetComponent<AudioSource>();
+
         //get initial player position
         playerPos = player.position;
 
@@ -30,6 +38,10 @@ public class FollowerScript : MonoBehaviour
     }
     void FollowPlayer()
     {
+        if (!audio.isPlaying)
+        {
+            audio.PlayOneShot(chaseSound);
+        }
         //transform.LookAt(player.position);
         agent.speed = gameController.followerSpeed;
 
@@ -47,6 +59,8 @@ public class FollowerScript : MonoBehaviour
                     searchTime = searchTimeMax;
                     incrementSearch = 0f;
                     incrementSearchAmount = 0f;
+                    //sound
+                    audio.PlayOneShot(searchSound, 0.7f);
                 }
             }
         }
@@ -65,6 +79,7 @@ public class FollowerScript : MonoBehaviour
 
     void SearchPlayer()
     {
+        
         searchTime -= Time.deltaTime;
         incrementSearch += Time.deltaTime;
         //every 1 second change look direction
@@ -94,11 +109,17 @@ public class FollowerScript : MonoBehaviour
         {
             chaseState = Chase.Wandering;
             Debug.Log("Wandering");
+            //sound
+            audio.PlayOneShot(wanderSound, 0.7f);
         }
     }
 
     void Wandering()
     {
+        if (!audio.isPlaying)
+        {
+            audio.PlayOneShot(wanderSound, 1f);
+        }
         //if all waypoints are visited reset them
         int visitedCount = 0;
         for(int i = 0; i<waypoints.Length; i++)
