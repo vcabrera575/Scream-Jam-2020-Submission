@@ -180,8 +180,9 @@ public class FollowerScript : MonoBehaviour
     {
         Vector3 targetDir = player.position - transform.position;
         float angle = Vector3.Angle(targetDir, transform.forward);
+        float dis = Vector3.Distance(player.position, transform.position);
 
-        return (angle < 90f);
+        return (angle < 90f) && (dis<40f);
     }
 
 }
