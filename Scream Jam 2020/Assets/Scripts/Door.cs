@@ -39,6 +39,7 @@ public class Door : MonoBehaviour
     //makes candy and throws it at the player
     void MakeCandy()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         for(int i = 0; i<candies; i++)
         {
             Transform cm = Instantiate(candy.transform, (player.transform.position + (transform.forward*1.5f)),transform.rotation);
