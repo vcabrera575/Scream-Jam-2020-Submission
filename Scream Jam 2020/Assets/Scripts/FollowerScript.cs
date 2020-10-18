@@ -114,6 +114,7 @@ public class FollowerScript : MonoBehaviour
             }
         }
         //search for closest waypoint
+        //TODO: fix that it doesnt currently find the closest waypoint sometimes
         if (destination == null || destination.GetComponent<WaypointScript>().BeenTo == true)
         {
             float dist = Vector3.Distance(waypoints[0].transform.position, transform.position);

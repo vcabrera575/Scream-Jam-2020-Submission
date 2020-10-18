@@ -7,6 +7,8 @@ TagManager:
   - Door
   - ExitZone
   - Obstacle
+  - Waypoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
