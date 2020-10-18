@@ -59,8 +59,6 @@ public class FollowerScript : MonoBehaviour
                     searchTime = searchTimeMax;
                     incrementSearch = 0f;
                     incrementSearchAmount = 0f;
-                    //sound
-                    audio.PlayOneShot(searchSound, 0.7f);
                 }
             }
         }
@@ -101,6 +99,8 @@ public class FollowerScript : MonoBehaviour
                 {
                     chaseState = Chase.Chasing;
                     searchTime = searchTimeMax;
+                    //sound
+                    audio.PlayOneShot(searchSound, 0.7f);
                 }
             }
         }
@@ -110,6 +110,7 @@ public class FollowerScript : MonoBehaviour
             chaseState = Chase.Wandering;
             Debug.Log("Wandering");
             //sound
+            audio.Stop();
             audio.PlayOneShot(wanderSound, 0.7f);
         }
     }
@@ -186,11 +187,14 @@ public class FollowerScript : MonoBehaviour
         Vector3 dir = player.position - transform.position;
         RaycastHit hit;
         Debug.DrawRay(transform.position, dir, Color.white, 0.1f, false);
-        if (Physics.Raycast(transform.position, dir, out hit))
+        if (Physics.Raycast(transform.position, dir, out hit) && chaseState!=Chase.Chasing)
         {
             if (hit.transform.tag == "Player" && InLineOfSight())
             {
                 chaseState = Chase.Chasing;
+                //sound
+                audio.Stop();
+                audio.PlayOneShot(searchSound, 0.7f);
             }
 
         }
