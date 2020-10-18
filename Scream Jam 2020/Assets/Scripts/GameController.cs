@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     float gameStartTime = 0f;
     public float gameTimer = 100f;
     public string message = "";
+    public bool messageChanged = false;
+    public float messageOnScreenTimer = 3f;   // How long will the message be on screen, multiplied by 2
+    public float satiationDecreaseSpeed = 6f; // How long will it take for the player's candy meter go down
 
     // Follower Variables
     public bool followPlayer = false;
@@ -56,19 +59,18 @@ public class GameController : MonoBehaviour
 
         if (gameTimer <= gameStartTime - followerWaitTime || gameTimer <= 0)
             followPlayer = true;
-        
-
-        CheckFullness();
     }
 
+    // Check to see how full the player is. 
+    // Only referenced from CandyController right now.
     public void CheckFullness()
     {
-
+        // If the player is full but hasn't been sick eyt
         if (hasEaten && !isSick && playerFullness > maxFullness)
         {
             playerSpeed = sickSpeed;
             isSick = true;
-        }
+        } 
         else if (playerFullness <= 34)
         {
             playerSpeed = playerBaseSpeed + (1 * candySpeedBoost);
@@ -84,14 +86,18 @@ public class GameController : MonoBehaviour
             isSick = false;
         }
 
+
+        // Make sure that we decrease timer
         if (playerFullness > 0)
-            playerFullness -= 6 * Time.deltaTime;
+            playerFullness -= satiationDecreaseSpeed * Time.deltaTime;
         if (playerFullness < 0)
             playerFullness = 0;
 
+        // If the player is sick, make sure none of the changes above happened
         if (isSick)
             playerSpeed = sickSpeed;
     }
+
     //get candies
     public void GetCandy(int amount)
     {
@@ -112,6 +118,7 @@ public class GameController : MonoBehaviour
     public void SetMessage(string newMessage)
     {
         message = newMessage;
+        messageChanged = true;
     }
 
     public void Caught()
