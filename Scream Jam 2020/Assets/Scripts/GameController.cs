@@ -28,6 +28,10 @@ public class GameController : MonoBehaviour
     public int firstCandyTier = 12;
     public int secondCandyTier = 21;
 
+    // Door knockers
+    public float knockCooldown = 5f; // Time in seconds 
+    public float openCooldown = 10f; // Time in seconds
+
     // Player Variables
     public float playerSpeed = 12f;
     public float playerBaseSpeed = 12f;

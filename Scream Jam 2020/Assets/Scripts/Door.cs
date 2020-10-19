@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public GameController gameController;
     public Transform player;
     public GameObject doorHinge;
     public bool hasBeenKnocked = false;
@@ -14,9 +15,7 @@ public class Door : MonoBehaviour
 
     // Cooldowns for knocking
     public float knockTimer = 0f; // Time since last knock
-    public float knockCooldown = 5f; // Time in seconds 
     public float openTimer = 0f; // Time since door opened
-    public float openCooldown = 10f; // Time in seconds
 
 
     public AudioSource doorSoundSource;
@@ -42,9 +41,9 @@ public class Door : MonoBehaviour
                 hasBeenKnocked = true;
                 doorLightOne.enabled = false;
                 doorLightTwo.enabled = false;
-                openTimer = knockCooldown;
+                openTimer = gameController.knockCooldown;
             }
-            knockTimer = knockCooldown;
+            knockTimer = gameController.knockCooldown;
         }
 
     }

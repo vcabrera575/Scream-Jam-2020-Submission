@@ -331,6 +331,8 @@ MonoBehaviour:
   candySaturation: 34
   firstCandyTier: 12
   secondCandyTier: 21
+  knockCooldown: 5
+  openCooldown: 10
   playerSpeed: 12
   playerBaseSpeed: 12
   playerFullness: 0
@@ -1128,22 +1130,22 @@ PrefabInstance:
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.70492375
+      value: -0.6461906
       objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7092832
+      value: 0.7631761
       objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
@@ -1158,7 +1160,7 @@ PrefabInstance:
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 89.647
+      value: -80.51
       objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
@@ -1422,11 +1424,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2474199340811578349, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
+    - target: {fileID: 2911482157895742523, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
     - target: {fileID: 2953076569641685399, guid: c5258baeb80d34e44aeedd9f78d06526,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2035444155}
+    - target: {fileID: 2953076569641685399, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
+    - target: {fileID: 3254314511177571100, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
     - target: {fileID: 3283236912701184561, guid: c5258baeb80d34e44aeedd9f78d06526,
         type: 3}
       propertyPath: player
@@ -1502,6 +1524,21 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 347817298}
+    - target: {fileID: 6509727144834128581, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 347817298}
+    - target: {fileID: 6509727145714811724, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: m_Name
+      value: ExitZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509727145714811725, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 347817298}
     - target: {fileID: 6883995036910895614, guid: c5258baeb80d34e44aeedd9f78d06526,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -1517,6 +1554,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7438009898843797900, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
+    - target: {fileID: 8592171329673290707, guid: c5258baeb80d34e44aeedd9f78d06526,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5258baeb80d34e44aeedd9f78d06526, type: 3}
 --- !u!1001 &6931400311084084489

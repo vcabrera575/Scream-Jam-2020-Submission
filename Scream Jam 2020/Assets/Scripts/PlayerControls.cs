@@ -19,8 +19,10 @@ public class PlayerControls : MonoBehaviour
             Vector3 direction = playerCamera.transform.forward;
             RaycastHit hit;
 
+
             if (Physics.Raycast(origin, direction, out hit, objectDistance))
             {
+
                 // Player knocked on door
                 if (hit.transform.tag == "Door")
                 {
