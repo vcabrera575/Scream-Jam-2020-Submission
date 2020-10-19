@@ -169,36 +169,36 @@ public class FollowerScript : MonoBehaviour
     void Update()
     {
 
-        ////times up so always follow player
-        //if (gameController.gameTimer <= 0)
-        //{
-        //    chaseState = Chase.Chasing;
-        //    playerPos = player.position;
-        //}
-        ////chasing player
-        //if (chaseState == Chase.Chasing && gameController.followPlayer)
-        //    FollowPlayer();
-        ////search for player
-        //if (chaseState == Chase.Searching && gameController.followPlayer)
-        //    SearchPlayer();
-        ////wandering
-        //if (chaseState == Chase.Wandering && gameController.followPlayer)
-        //    Wandering();
-        ////found player so start chasing
-        //Vector3 dir = player.position - transform.position;
-        //RaycastHit hit;
-        //Debug.DrawRay(transform.position, dir, Color.white, 0.1f, false);
-        //if (Physics.Raycast(transform.position, dir, out hit) && chaseState!=Chase.Chasing)
-        //{
-        //    if (hit.transform.tag == "Player" && InLineOfSight())
-        //    {
-        //        chaseState = Chase.Chasing;
-        //        //sound
-        //        audio.Stop();
-        //        audio.PlayOneShot(searchSound, 0.7f);
-        //    }
+        //times up so always follow player
+        if (gameController.gameTimer <= 0)
+        {
+            chaseState = Chase.Chasing;
+            playerPos = player.position;
+        }
+        //chasing player
+        if (chaseState == Chase.Chasing && gameController.followPlayer)
+            FollowPlayer();
+        //search for player
+        if (chaseState == Chase.Searching && gameController.followPlayer)
+            SearchPlayer();
+        //wandering
+        if (chaseState == Chase.Wandering && gameController.followPlayer)
+            Wandering();
+        //found player so start chasing
+        Vector3 dir = player.position - transform.position;
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, dir, Color.white, 0.1f, false);
+        if (Physics.Raycast(transform.position, dir, out hit) && chaseState != Chase.Chasing)
+        {
+            if (hit.transform.tag == "Player" && InLineOfSight())
+            {
+                chaseState = Chase.Chasing;
+                //sound
+                audio.Stop();
+                audio.PlayOneShot(searchSound, 0.7f);
+            }
 
-        //}
+        }
     }
 
     //see if player is in line of sight

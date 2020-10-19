@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     // Follower Variables
     public bool followPlayer = false;
+    public bool debugFollowPlayer = true;
     public float followerWaitTime = 15f;
     public float followerSpeed = 8f;
 
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
         }
 
         if (gameTimer <= gameStartTime - followerWaitTime || gameTimer <= 0)
-            followPlayer = true;
+            followPlayer = debugFollowPlayer;
 
         CheckFullness();
     }
