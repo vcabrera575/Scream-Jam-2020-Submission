@@ -12,8 +12,8 @@ public class Door : MonoBehaviour
     public int candies = 3;
 
     // Cooldowns for knocking
-    float knockTimer = 0f;
-    public float knockCooldown = 5f; // Time in seconds
+    public float knockTimer = 0f;
+    public float knockCooldown = 5f * 60f; // Time in seconds * 60
 
     public AudioSource doorSoundSource;
     public AudioClip doorSound;
@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
     {
         if (!hasBeenKnocked && knockTimer <= 0)
         {
-            //hasBeenKnocked = true;
+            hasBeenKnocked = true;
             doorSoundSource.PlayOneShot(doorSound, volume);
             MakeCandy();
             doorLightOne.enabled = false;
@@ -48,9 +48,16 @@ public class Door : MonoBehaviour
         }
     }
 
-    void update()
+    void Update()
     {
         //count down knock timer
         knockTimer -= Time.deltaTime;
+
+        if (knockTimer <= 0 && hasBeenKnocked)
+        {
+            hasBeenKnocked = false;
+            doorLightOne.enabled = true;
+            doorLightTwo.enabled = true;
+        }
     }
 }

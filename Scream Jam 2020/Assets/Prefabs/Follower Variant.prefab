@@ -4781,8 +4781,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 0}
+  agent: {fileID: 0}
   player: {fileID: 0}
-  followSpeed: 2
+  waypoints: []
+  destination: {fileID: 0}
+  audio: {fileID: 0}
+  wanderSound: {fileID: 0}
+  chaseSound: {fileID: 0}
+  searchSound: {fileID: 0}
   minDistance: 5
   maxDistance: 5
 --- !u!1001 &6931400311651399980
@@ -4862,6 +4868,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7500005
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 30f7ed4dc5041244ab77a8fb91136709,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30f7ed4dc5041244ab77a8fb91136709,
         type: 3}
       propertyPath: m_Name
@@ -4870,6 +4881,11 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30f7ed4dc5041244ab77a8fb91136709,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100320773420232829, guid: 30f7ed4dc5041244ab77a8fb91136709,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -320,12 +320,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTimer: 60
   message: 
+  messageChanged: 0
+  messageOnScreenTimer: 3
+  satiationDecreaseSpeed: 6
   followPlayer: 0
   followerWaitTime: 0
   followerSpeed: 12
   candy: 0
   candySpeedBoost: 2
   candySaturation: 34
+  firstCandyTier: 12
+  secondCandyTier: 21
   playerSpeed: 12
   playerBaseSpeed: 12
   playerFullness: 0
@@ -1227,8 +1232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3788f213fb2675640a335556b7514641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 347817298}
+  gameController: {fileID: 347817298}
   message: {fileID: 1933197099}
+  displayTimer: 0
 --- !u!114 &1933197099
 MonoBehaviour:
   m_ObjectHideFlags: 0

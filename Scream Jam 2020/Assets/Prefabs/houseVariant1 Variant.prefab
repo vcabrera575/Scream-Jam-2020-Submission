@@ -335,6 +335,7 @@ MonoBehaviour:
   hasBeenKnocked: 0
   candy: {fileID: 2862625046210209135, guid: f408d77c4b3db2240b0ae87701ae1832, type: 3}
   candies: 3
+  knockTimer: 5
   knockCooldown: 5
   doorSoundSource: {fileID: 6524274743987948160}
   doorSound: {fileID: 8300000, guid: 9624c81816a34d8498437ebf9ed50b38, type: 3}

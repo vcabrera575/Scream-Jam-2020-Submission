@@ -9,8 +9,6 @@ public class InterfaceMessage : MonoBehaviour
 
     public float displayTimer = 0f;
 
-    bool fading = false;
-
     // Update is called once per frame
     void Update()
     {
