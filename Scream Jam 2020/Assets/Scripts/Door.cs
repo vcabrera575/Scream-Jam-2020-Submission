@@ -6,6 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public Transform player;
+    public GameObject doorHinge;
     public bool hasBeenKnocked = false;
 
     public GameObject candy;
@@ -36,8 +37,9 @@ public class Door : MonoBehaviour
             doorSoundSource.PlayOneShot(doorSound, volume);
             if (randNumber < 4 && openTimer <= 0 && !hasBeenKnocked)
             {
-                hasBeenKnocked = true;
                 MakeCandy();
+                ToggleDoor(true);
+                hasBeenKnocked = true;
                 doorLightOne.enabled = false;
                 doorLightTwo.enabled = false;
                 openTimer = knockCooldown;
@@ -46,6 +48,7 @@ public class Door : MonoBehaviour
         }
 
     }
+
     //makes candy and throws it at the player
     void MakeCandy()
     {
@@ -56,6 +59,24 @@ public class Door : MonoBehaviour
             cm.position = new Vector3(cm.position.x, cm.position.y + 3, cm.position.z);
             cm.position += Random.insideUnitSphere * 0.5f;
         }
+    }
+
+    // Switch between opening and closing the door
+    void ToggleDoor(bool open)
+    {
+        
+        if (open)
+        {
+            // Create a quaternion to move the rotation the direction we need
+            Quaternion rotation = doorHinge.transform.rotation * Quaternion.Euler(0, -90, 0);
+            doorHinge.transform.rotation = Quaternion.Slerp(doorHinge.transform.rotation, rotation, 5f);
+        }
+        if (!open)
+        {
+            Quaternion rotation = doorHinge.transform.rotation * Quaternion.Euler(0, 90, 0);
+            doorHinge.transform.rotation = Quaternion.Slerp(doorHinge.transform.rotation, rotation, 5f);
+        }
+
     }
 
     void Update()
@@ -69,6 +90,7 @@ public class Door : MonoBehaviour
             hasBeenKnocked = false;
             doorLightOne.enabled = true;
             doorLightTwo.enabled = true;
+            ToggleDoor(false);
         }
 
     }

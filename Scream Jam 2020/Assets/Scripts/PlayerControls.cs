@@ -21,7 +21,6 @@ public class PlayerControls : MonoBehaviour
 
             if (Physics.Raycast(origin, direction, out hit, objectDistance))
             {
-
                 // Player knocked on door
                 if (hit.transform.tag == "Door")
                 {
