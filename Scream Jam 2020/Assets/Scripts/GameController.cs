@@ -99,7 +99,7 @@ public class GameController : MonoBehaviour
 
         // Make sure that we decrease timer
         if (playerFullness > 0)
-            playerFullness -= Time.deltaTime / (satiationDecreaseSpeed / maxFullness);
+            playerFullness -= Time.deltaTime / (satiationDecreaseSpeed / maxFullness); // Frame time / (Seconds / total we need to get rid of)
         if (playerFullness < 0)
             playerFullness = 0;
 
