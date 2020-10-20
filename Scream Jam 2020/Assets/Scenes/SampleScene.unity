@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 347817298}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,13 +324,16 @@ MonoBehaviour:
   messageOnScreenTimer: 3
   satiationDecreaseSpeed: 6
   followPlayer: 0
+  debugFollowPlayer: 0
   followerWaitTime: 0
   followerSpeed: 12
   candy: 0
   candySpeedBoost: 2
   candySaturation: 34
-  firstCandyTier: 12
-  secondCandyTier: 21
+  bucketIsFull: 0
+  firstCandyTier: 9
+  secondCandyTier: 15
+  maxCandyInBucket: 20
   knockCooldown: 5
   openCooldown: 10
   playerSpeed: 12
@@ -674,6 +677,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1749790748995913693, guid: f408d77c4b3db2240b0ae87701ae1832,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785189510801295413, guid: f408d77c4b3db2240b0ae87701ae1832,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2862625046210209135, guid: f408d77c4b3db2240b0ae87701ae1832,
         type: 3}
       propertyPath: m_Name
@@ -733,6 +746,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8198459119779739549, guid: f408d77c4b3db2240b0ae87701ae1832,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f408d77c4b3db2240b0ae87701ae1832, type: 3}
@@ -1102,6 +1120,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1741175048812713472, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3688116413869269033, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: playerCamera
@@ -1112,6 +1135,21 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 347817298}
+    - target: {fileID: 3782548967844609843, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5662306722100144951, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 347817298}
+    - target: {fileID: 6058440848644195334, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6185129495954316456, guid: 3d4b494bff266fe4e855ed5b9f6dda37,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: cb76670295495dc428dce00aead49493
+guid: b1d813f9a9575a844a2026f6954db8dd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ChocolateBar
+    second: {fileID: 2800000, guid: a36b16494ce616f4885d3e1eeeec63e4, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -69,7 +74,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

@@ -25,8 +25,10 @@ public class GameController : MonoBehaviour
     public float candySaturation = 34f; // A number that is more or less close to 3 * this = more than 100;
 
     // Candy Weight Management tiers
-    public int firstCandyTier = 12;
-    public int secondCandyTier = 21;
+    public bool bucketIsFull = false;
+    public int firstCandyTier = 9;
+    public int secondCandyTier = 15;
+    public int maxCandyInBucket = 20;
 
     // Door knockers
     public float knockCooldown = 5f; // Time in seconds 
@@ -127,6 +129,11 @@ public class GameController : MonoBehaviour
     public void GetCandy(int amount)
     {
         candy += amount;
+    }
+    //get how many candies are in bucket
+    public bool GetBucketFullness()
+    {
+        return bucketIsFull;
     }
 
     public void EatCandy()
