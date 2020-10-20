@@ -10,13 +10,18 @@ public class CandyMeter : MonoBehaviour
 
     public RectTransform normalFill;
     public RectTransform sickFill;
+    public RectTransform speedFill;
 
     // Update is called once per frame
     void Update()
     {
         // We must reset the value every time, or else the old bar will stay filled.
         candySlider.value = 0;
-        if (gameController.isSick) // Red bar
+        if (gameController.candySpeedTimer > 0)
+        {
+            candySlider.fillRect = speedFill;
+        }
+        else if (gameController.isSick) // Red bar
         {
             candySlider.fillRect = sickFill;
         }

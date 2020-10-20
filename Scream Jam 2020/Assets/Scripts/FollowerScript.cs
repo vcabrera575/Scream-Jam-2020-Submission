@@ -231,20 +231,20 @@ public class FollowerScript : MonoBehaviour
 
     void ChangeMusic()
     {
-        int currentTime = playerAudio.timeSamples;
-        Debug.Log("Current state: " + chaseState);
-        if (chaseState == Chase.Chasing)
-        {
-            playerAudio.clip = chasingSong;
-            playerAudio.timeSamples = currentTime;
-            playerAudio.Play();
-        }
-        else
-        {
-            playerAudio.clip = regularSong;
-            playerAudio.timeSamples = currentTime;
-            playerAudio.Play();
-        }
+        //int currentTime = playerAudio.timeSamples;
+        //Debug.Log("Current state: " + chaseState);
+        //if (chaseState == Chase.Chasing)
+        //{
+        //    playerAudio.clip = chasingSong;
+        //    playerAudio.timeSamples = currentTime;
+        //    playerAudio.Play();
+        //}
+        //else
+        //{
+        //    playerAudio.clip = regularSong;
+        //    playerAudio.timeSamples = currentTime;
+        //    playerAudio.Play();
+        //}
     }
 
 }
