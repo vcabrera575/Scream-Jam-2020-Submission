@@ -37,13 +37,14 @@ public class PickupCandy : MonoBehaviour
         if (Vector3.Distance(playerPosition, transform.position) <= 2f)
         {
             // make sure the candy bucket isn't full
-            if (!GameObject.Find("GameController").GetComponent<GameController>().bucketIsFull)
-            {
-                GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
-                Destroy(gameObject);
-            }
-            else
-                GameObject.Find("GameController").GetComponent<GameController>().SetMessage("Your bucket is full!");
+            //NOTE: I think letting the player have unlimited candy in bucket is okay since he has a speed penalty so i commented this out for now
+            //if (!GameObject.Find("GameController").GetComponent<GameController>().bucketIsFull)
+            //{
+            //    GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
+            //    Destroy(gameObject);
+            //}
+            //else
+            //    GameObject.Find("GameController").GetComponent<GameController>().SetMessage("Your bucket is full!");
         }
     }
 }
