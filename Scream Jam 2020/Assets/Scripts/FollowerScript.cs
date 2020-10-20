@@ -15,6 +15,11 @@ public class FollowerScript : MonoBehaviour
     public AudioClip chaseSound;
     public AudioClip searchSound;
 
+    // Player Audio Source for Music toggle
+    public AudioSource playerAudio;
+    public AudioClip regularSong;
+    public AudioClip chasingSong;
+
     public float minDistance = 5f;
     public float maxDistance = 5f;
     float searchTimeMax = 5f;
@@ -29,6 +34,12 @@ public class FollowerScript : MonoBehaviour
     {
         //get audio source
         audio = GetComponent<AudioSource>();
+
+        // get player's audio source
+        playerAudio = player.GetComponent<AudioSource>();
+
+        // Set initial state at spawn
+        chaseState = Chase.Wandering;
 
         //get initial player position
         playerPos = player.position;
@@ -112,6 +123,9 @@ public class FollowerScript : MonoBehaviour
             //sound
             audio.Stop();
             audio.PlayOneShot(wanderSound, 0.7f);
+
+            // Change the music
+            ChangeMusic();
         }
     }
 
@@ -196,9 +210,13 @@ public class FollowerScript : MonoBehaviour
                 //sound
                 audio.Stop();
                 audio.PlayOneShot(searchSound, 0.7f);
+
+                // Change the music
+                ChangeMusic();
             }
 
         }
+
     }
 
     //see if player is in line of sight
@@ -209,6 +227,24 @@ public class FollowerScript : MonoBehaviour
         float dis = Vector3.Distance(player.position, transform.position);
 
         return (angle < 90f) && (dis<40f);
+    }
+
+    void ChangeMusic()
+    {
+        int currentTime = playerAudio.timeSamples;
+        Debug.Log("Current state: " + chaseState);
+        if (chaseState == Chase.Chasing)
+        {
+            playerAudio.clip = chasingSong;
+            playerAudio.timeSamples = currentTime;
+            playerAudio.Play();
+        }
+        else
+        {
+            playerAudio.clip = regularSong;
+            playerAudio.timeSamples = currentTime;
+            playerAudio.Play();
+        }
     }
 
 }
