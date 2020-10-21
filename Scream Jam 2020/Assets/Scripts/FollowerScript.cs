@@ -188,6 +188,9 @@ public class FollowerScript : MonoBehaviour
         {
             chaseState = Chase.Chasing;
             playerPos = player.position;
+
+            // Change the Music
+            ChangeMusic();
         }
         //chasing player
         if (chaseState == Chase.Chasing && gameController.followPlayer)
