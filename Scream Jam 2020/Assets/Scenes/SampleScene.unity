@@ -322,8 +322,8 @@ MonoBehaviour:
   message: 
   messageChanged: 0
   messageOnScreenTimer: 3
-  satiationDecreaseSpeed: 20
-  satiationDecreaseSpeedNormal: 20
+  satiationDecreaseSpeed: 30
+  satiationDecreaseSpeedNormal: 30
   satiationDecreaseSpeedSick: 5
   followPlayer: 0
   debugFollowPlayer: 0
@@ -333,7 +333,8 @@ MonoBehaviour:
   candySpeedBoost: 2
   candySaturation: 34
   candySpeedTimerMax: 3
-  candySpeedBoostFixed: 15
+  candySpeedBoostFixed: 20
+  candySpeedTimer: 0
   bucketIsFull: 0
   firstCandyTier: 9
   secondCandyTier: 15
@@ -346,7 +347,7 @@ MonoBehaviour:
   maxFullness: 100
   hasEaten: 0
   isSick: 0
-  sickSpeed: 5
+  sickSpeed: 1
   highScore: 2
 --- !u!4 &347817299
 Transform:
@@ -606,6 +607,7 @@ MonoBehaviour:
   candySlider: {fileID: 629560655}
   normalFill: {fileID: 1209638802}
   sickFill: {fileID: 1002688242}
+  speedFill: {fileID: 476638603}
 --- !u!114 &629560655
 MonoBehaviour:
   m_ObjectHideFlags: 0

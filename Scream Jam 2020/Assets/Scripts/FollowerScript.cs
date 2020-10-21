@@ -216,7 +216,13 @@ public class FollowerScript : MonoBehaviour
             }
 
         }
-
+        //caught player
+        float dist = Vector3.Distance(player.position, transform.position);
+        if (dist <= 3f)
+        {
+            GameObject.Find("GameController").GetComponent<GameController>().Caught();
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     //see if player is in line of sight
