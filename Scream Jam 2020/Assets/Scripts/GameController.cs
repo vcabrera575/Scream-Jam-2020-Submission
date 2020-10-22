@@ -115,6 +115,8 @@ public class GameController : MonoBehaviour
         {
             playerSpeed = sickSpeed;
             satiationDecreaseSpeed = satiationDecreaseSpeedSick;
+            //alert follower to your location
+            GameObject.FindGameObjectWithTag("Enemy").GetComponent<FollowerScript>().FindPlayer();
         }
         else
         {

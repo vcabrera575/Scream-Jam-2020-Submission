@@ -46,7 +46,8 @@ public class Door : MonoBehaviour
             }
             knockTimer = gameController.knockCooldown;
         }
-
+        //alert follower to your location
+        GameObject.FindGameObjectWithTag("Enemy").GetComponent<FollowerScript>().FindPlayer();
     }
 
     //makes candy and throws it at the player
