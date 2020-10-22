@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     // Game timer management
+    public bool gamePaused = false;
+
     float gameStartTime = 0f;
     public float gameTimer = 100f;
     public string message = "";
@@ -59,6 +61,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         gameStartTime = gameTimer;
+        gamePaused = false;
         inProgress = true;
         gameEnded = false;
         timerEnded = false;
@@ -82,6 +85,27 @@ public class GameController : MonoBehaviour
 
         CheckFullness();
     }
+
+
+    public void PauseGame()
+    {
+        if (!gamePaused)
+        {
+            gamePaused = true;
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+            SetMessage("Game Paused\nCurrent Score: " + highScore);
+        }
+        else
+        {
+            gamePaused = false;
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+            SetMessage("Game Resumed");
+        }
+    }
+
+
 
     // Check to see how full the player is. 
     // Only referenced from CandyController right now.

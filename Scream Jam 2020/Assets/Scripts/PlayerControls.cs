@@ -43,5 +43,10 @@ public class PlayerControls : MonoBehaviour
             gameController.EatCandy();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameController.PauseGame();
+        }
+
     }
 }

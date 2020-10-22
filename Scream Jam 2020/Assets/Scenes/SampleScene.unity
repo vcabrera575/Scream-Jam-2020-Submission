@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70cac408ab5a044b886769fa3d003ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamePaused: 0
   gameTimer: 180
   message: 
   messageChanged: 0
@@ -455,7 +456,7 @@ MonoBehaviour:
   satiationDecreaseSpeedNormal: 60
   satiationDecreaseSpeedSick: 10
   followPlayer: 0
-  debugFollowPlayer: 0
+  debugFollowPlayer: 1
   followerWaitTime: 0
   followerSpeed: 12
   candy: 0
