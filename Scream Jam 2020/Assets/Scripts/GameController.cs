@@ -58,14 +58,26 @@ public class GameController : MonoBehaviour
     bool gameEnded = false;
     bool timerEnded = false;
 
+    // UI selectors
+    public Canvas UserInterface;
+    public Canvas PauseScreen;
+    public Text scoreText;
+
     void Start()
     {
         gameStartTime = gameTimer;
-        gamePaused = false;
         inProgress = true;
         gameEnded = false;
         timerEnded = false;
         followPlayer = false;
+
+        // Start the game
+        gamePaused = true;
+        PauseGame();
+
+        // Hide and lock the cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -86,25 +98,50 @@ public class GameController : MonoBehaviour
         CheckFullness();
     }
 
-
+    // Pause the game
     public void PauseGame()
     {
         if (!gamePaused)
         {
+            // Pause the game
             gamePaused = true;
+            inProgress = false;
             Time.timeScale = 0;
             AudioListener.pause = true;
-            SetMessage("Game Paused\nCurrent Score: " + highScore);
+
+            // Enable the cursor
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            // Canvas disable
+            UserInterface.gameObject.SetActive(false);
+            PauseScreen.gameObject.SetActive(true);
+            scoreText.text = "High Score: " + highScore.ToString();
         }
         else
         {
+            // Unpause the game
+            inProgress = true;
             gamePaused = false;
             Time.timeScale = 1;
             AudioListener.pause = false;
-            SetMessage("Game Resumed");
+
+            // Disable the cursor
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+
+            // Canvas flip
+            UserInterface.gameObject.SetActive(true);
+            PauseScreen.gameObject.SetActive(false);
         }
     }
 
+    // Go back to the main menu
+    public void QuitGame()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 
     // Check to see how full the player is. 
@@ -195,9 +232,10 @@ public class GameController : MonoBehaviour
         messageChanged = true;
     }
 
+    // Player is caught
     public void Caught()
     {
         gameEnded = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(2);
     }
 }
