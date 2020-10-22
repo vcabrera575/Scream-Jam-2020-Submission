@@ -86,7 +86,6 @@ public class Door : MonoBehaviour
         //count down knock timer
         knockTimer -= Time.deltaTime;
         openTimer -= Time.deltaTime;
-        Debug.Log("Has been knocked: " + hasBeenKnocked + " " + openTimer);
 
         if (hasBeenKnocked && knockTimer <= 0)
         {
