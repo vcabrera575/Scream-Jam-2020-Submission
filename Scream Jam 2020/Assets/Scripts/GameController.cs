@@ -132,7 +132,8 @@ public class GameController : MonoBehaviour
         {
             playerSpeed -= 2f;
         }
-
+        //make sure speed doesn't become negative
+        playerSpeed = Mathf.Max(playerSpeed, 1f);
         //candy speed boost, overrides all
         if (candySpeedTimer > 0)
         {
