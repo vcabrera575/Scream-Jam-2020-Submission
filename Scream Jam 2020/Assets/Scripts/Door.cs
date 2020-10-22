@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public Transform player;
     public GameObject doorHinge;
     public bool hasBeenKnocked = false;
+    bool doorIsOpen = false;
 
     public GameObject candy;
     public int candies = 3;
@@ -31,7 +32,7 @@ public class Door : MonoBehaviour
     {
         int randNumber = Random.Range(1, 5);
 
-        if (knockTimer <= 0)
+        if (knockTimer <= 0 && openTimer <= 0)
         {
             doorSoundSource.PlayOneShot(doorSound, volume);
             if (randNumber < 4 && openTimer <= 0 && !hasBeenKnocked)
@@ -41,7 +42,7 @@ public class Door : MonoBehaviour
                 hasBeenKnocked = true;
                 doorLightOne.enabled = false;
                 doorLightTwo.enabled = false;
-                openTimer = gameController.knockCooldown;
+                openTimer = gameController.openCooldown;
             }
             knockTimer = gameController.knockCooldown;
         }
@@ -63,15 +64,16 @@ public class Door : MonoBehaviour
     // Switch between opening and closing the door
     void ToggleDoor(bool open)
     {
-        
         if (open)
         {
+            doorIsOpen = true;
             // Create a quaternion to move the rotation the direction we need
             Quaternion rotation = doorHinge.transform.rotation * Quaternion.Euler(0, -90, 0);
             doorHinge.transform.rotation = Quaternion.Slerp(doorHinge.transform.rotation, rotation, 5f);
         }
         if (!open)
         {
+            doorIsOpen = false;
             Quaternion rotation = doorHinge.transform.rotation * Quaternion.Euler(0, 90, 0);
             doorHinge.transform.rotation = Quaternion.Slerp(doorHinge.transform.rotation, rotation, 5f);
         }
@@ -83,13 +85,17 @@ public class Door : MonoBehaviour
         //count down knock timer
         knockTimer -= Time.deltaTime;
         openTimer -= Time.deltaTime;
+        Debug.Log("Has been knocked: " + hasBeenKnocked + " " + openTimer);
 
-        if (openTimer <= 0 && hasBeenKnocked)
+        if (hasBeenKnocked && knockTimer <= 0)
         {
+            ToggleDoor(false);
             hasBeenKnocked = false;
+        }
+        if (openTimer <= 0 && !doorIsOpen)
+        {
             doorLightOne.enabled = true;
             doorLightTwo.enabled = true;
-            ToggleDoor(false);
         }
 
     }
