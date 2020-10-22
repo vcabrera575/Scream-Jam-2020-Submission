@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     public GameController gameController;
     public Transform player;
     public GameObject doorHinge;
+
     public bool hasBeenKnocked = false;
     bool doorIsOpen = false;
 
@@ -30,7 +31,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Interact()
     {
-        int randNumber = Random.Range(1, 5);
+        int randNumber = Random.Range(1, 4); // set to 5
 
         if (knockTimer <= 0 && openTimer <= 0)
         {

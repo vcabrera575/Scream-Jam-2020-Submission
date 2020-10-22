@@ -18,9 +18,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        float deadZone = 0.25f; // Controller deadzone.
 
         Vector3 move = transform.right * x + transform.forward * z;
-        move = move.normalized;
+
+        // This will fix deadzone and normalization on controllers as well as keyboard.
+        if (move.magnitude < deadZone)
+            move = Vector3.zero;
+        else
+            move = move.normalized * ((move.magnitude - deadZone) / (1 - deadZone));
 
         // Check if the player is on the ground
         if (controller.isGrounded && velocity.y < 0)
