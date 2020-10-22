@@ -235,9 +235,15 @@ public class FollowerScript : MonoBehaviour
         float angle = Vector3.Angle(targetDir, transform.forward);
         float dis = Vector3.Distance(player.position, transform.position);
 
-        return (angle < 90f) && (dis<40f);
+        return (angle < 90f) && (dis<100f);
     }
-
+    public void FindPlayer()
+    {
+        //get player position
+        playerPos = player.position;
+        //start chasing
+        chaseState = Chase.Chasing;
+    }
     void ChangeMusic()
     {
         //int currentTime = playerAudio.timeSamples;
