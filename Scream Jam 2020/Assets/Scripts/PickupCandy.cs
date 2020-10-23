@@ -33,20 +33,23 @@ public class PickupCandy : MonoBehaviour
 
     void Update()
     {
-        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        if (GameObject.FindGameObjectWithTag("Player")!=null && Vector3.Distance(playerPosition, transform.position) <= 2f)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
-            Destroy(gameObject);
-            // make sure the candy bucket isn't full
-            //NOTE: I think letting the player have unlimited candy in bucket is okay since he has a speed penalty so i commented this out for now
-            //if (!GameObject.Find("GameController").GetComponent<GameController>().bucketIsFull)
-            //{
-            //    GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
-            //    Destroy(gameObject);
-            //}
-            //else
-            //    GameObject.Find("GameController").GetComponent<GameController>().SetMessage("Your bucket is full!");
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            if (Vector3.Distance(playerPosition, transform.position) <= 2f)
+            {
+                GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
+                Destroy(gameObject);
+                // make sure the candy bucket isn't full
+                //NOTE: I think letting the player have unlimited candy in bucket is okay since he has a speed penalty so i commented this out for now
+                //if (!GameObject.Find("GameController").GetComponent<GameController>().bucketIsFull)
+                //{
+                //    GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
+                //    Destroy(gameObject);
+                //}
+                //else
+                //    GameObject.Find("GameController").GetComponent<GameController>().SetMessage("Your bucket is full!");
+            }
         }
     }
 }
