@@ -22,7 +22,8 @@ public class GameController : MonoBehaviour
     public bool followPlayer = false;
     public bool debugFollowPlayer = true;
     public float followerWaitTime = 15f;
-    public float followerSpeed = 8f;
+    public float followerSpeed = 12f;
+    float followerSpeedBoostTimer = 0f;
 
     // Candy management
     public int candy = 0;
@@ -96,6 +97,13 @@ public class GameController : MonoBehaviour
             followPlayer = debugFollowPlayer;
 
         CheckFullness();
+
+        //increase follower speed overtime
+        followerSpeedBoostTimer += Time.deltaTime;
+        if (followerSpeedBoostTimer >= 60)
+        {
+            followerSpeed += 1f;
+        }
     }
 
     // Pause the game
