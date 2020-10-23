@@ -51,7 +51,7 @@ public class FollowerScript : MonoBehaviour
     {
         if (!audio.isPlaying)
         {
-            audio.PlayOneShot(chaseSound);
+            audio.PlayOneShot(chaseSound, 0.5f);
         }
         //transform.LookAt(player.position);
         agent.speed = gameController.followerSpeed;

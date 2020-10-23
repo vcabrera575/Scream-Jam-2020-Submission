@@ -633,11 +633,11 @@ MonoBehaviour:
   message: 
   messageChanged: 0
   messageOnScreenTimer: 3
-  satiationDecreaseSpeed: 60
-  satiationDecreaseSpeedNormal: 60
-  satiationDecreaseSpeedSick: 10
+  satiationDecreaseSpeed: 30
+  satiationDecreaseSpeedNormal: 30
+  satiationDecreaseSpeedSick: 5
   followPlayer: 0
-  debugFollowPlayer: 1
+  debugFollowPlayer: 0
   followerWaitTime: 0
   followerSpeed: 12
   candy: 0
@@ -658,7 +658,7 @@ MonoBehaviour:
   maxFullness: 100
   hasEaten: 0
   isSick: 0
-  sickSpeed: 1
+  sickSpeed: 5
   highScore: 2
   UserInterface: {fileID: 1878891632}
   PauseScreen: {fileID: 915299923}
@@ -1262,6 +1262,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1429ffb387722c44be09536ab73f277, type: 3}
+--- !u!1 &565344283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a1429ffb387722c44be09536ab73f277,
+    type: 3}
+  m_PrefabInstance: {fileID: 565344282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &565344284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565344283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c40719e368092b4f917e64c6986e00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 347817298}
+--- !u!64 &565344288
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565344283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7929139438592967118, guid: a1429ffb387722c44be09536ab73f277, type: 3}
 --- !u!1 &629560652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,6 +3473,8 @@ GameObject:
   - component: {fileID: 1878891632}
   - component: {fileID: 1878891631}
   - component: {fileID: 1878891630}
+  - component: {fileID: 1878891635}
+  - component: {fileID: 1878891634}
   m_Layer: 5
   m_Name: UserInterface
   m_TagString: Untagged
@@ -3530,6 +3565,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1878891634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878891629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1878891635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878891629}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1908392657
 PrefabInstance:
   m_ObjectHideFlags: 0
