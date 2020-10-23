@@ -10,14 +10,16 @@ public class exitZone : MonoBehaviour
     // Start is called before the first frame update
     void Interact()
     {
+        /* With the new implementation of the exit arrow, we do not need this anymore.
         if (gameManager.gameTimer >= 0)
         {
             gameManager.SetMessage("Are you sure you want to exit early?");
         }
         else
         {
-            gameManager.SetMessage("You're too late!");
+            gameManager.SetMessage("You're late, Lets go!!");
         }
+        */
 
         if (gameManager.candy > 0)
         {

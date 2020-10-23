@@ -184,6 +184,20 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!136 &1022189076961679819
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484690654970721051}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.09
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.48106164, z: 0.05415316}
 --- !u!1001 &3674299244938137162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,10 +283,16 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f1e1f3549e58fe6448eae28137bfcba7,
         type: 3}
       propertyPath: m_Name
-      value: Street Lamp
+      value: Street Lamp Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e1f3549e58fe6448eae28137bfcba7, type: 3}
+--- !u!1 &4484690654970721051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f1e1f3549e58fe6448eae28137bfcba7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3674299244938137162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3852551095725025697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1e1f3549e58fe6448eae28137bfcba7,
