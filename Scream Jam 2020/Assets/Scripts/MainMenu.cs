@@ -36,7 +36,8 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        mainCamera.transform.Rotate(0, 3f * Time.deltaTime, 0);
+        if (SceneManager.GetActiveScene().name == "Menu")
+            mainCamera.transform.Rotate(0, 3f * Time.deltaTime, 0);
     }
 
 }
