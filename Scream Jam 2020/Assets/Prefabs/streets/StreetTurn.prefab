@@ -1683,6 +1683,7 @@ GameObject:
   - component: {fileID: 7793704267750819133}
   - component: {fileID: 7793704267750819132}
   - component: {fileID: 7793704267750819131}
+  - component: {fileID: 141754699139358082}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -1764,6 +1765,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &141754699139358082
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793704267750819129}
+  m_Enabled: 1
+  m_SortingLayerID: -2037747399
+  m_SortingLayer: 2
+  m_SortingOrder: 1
 --- !u!1 &7793704267833055616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1788,7 @@ GameObject:
   - component: {fileID: 7793704267833055620}
   - component: {fileID: 7793704267833055619}
   - component: {fileID: 7793704267833055618}
+  - component: {fileID: 6105547889761441981}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -1858,6 +1871,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &6105547889761441981
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793704267833055616}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
 --- !u!1 &7793704268078249518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1894,7 @@ GameObject:
   - component: {fileID: 7793704268078249506}
   - component: {fileID: 7793704268078249505}
   - component: {fileID: 7793704268078249504}
+  - component: {fileID: 7105828795994037024}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -1951,6 +1976,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &7105828795994037024
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793704268078249518}
+  m_Enabled: 1
+  m_SortingLayerID: -2037747399
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &7793704268636802427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1999,7 @@ GameObject:
   - component: {fileID: 7793704268636802431}
   - component: {fileID: 7793704268636802430}
   - component: {fileID: 7793704268636802429}
+  - component: {fileID: 8517253150997215808}
   m_Layer: 0
   m_Name: Road (3)
   m_TagString: Untagged
@@ -2045,6 +2082,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &8517253150997215808
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793704268636802427}
+  m_Enabled: 1
+  m_SortingLayerID: 1567068527
+  m_SortingLayer: 1
+  m_SortingOrder: 5
 --- !u!1 &7793704269286193977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,6 +2190,7 @@ GameObject:
   - component: {fileID: 7793704269369334859}
   - component: {fileID: 7793704269369334858}
   - component: {fileID: 7793704269369334857}
+  - component: {fileID: 7369355087074875569}
   m_Layer: 0
   m_Name: Road (4)
   m_TagString: Untagged
@@ -2224,6 +2273,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &7369355087074875569
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7793704269369334871}
+  m_Enabled: 1
+  m_SortingLayerID: 1567068527
+  m_SortingLayer: 1
+  m_SortingOrder: 6
 --- !u!1 &8398915751756466089
 GameObject:
   m_ObjectHideFlags: 0

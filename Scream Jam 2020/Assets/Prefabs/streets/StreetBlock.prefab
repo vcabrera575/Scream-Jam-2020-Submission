@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4183160005499352508}
   - component: {fileID: 4183160005499352509}
   - component: {fileID: 4183160005499352510}
+  - component: {fileID: 7785947834483649690}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -94,6 +95,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &7785947834483649690
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183160005499352504}
+  m_Enabled: 1
+  m_SortingLayerID: -2037747399
+  m_SortingLayer: 2
+  m_SortingOrder: 6
 --- !u!1 &4183160005752761982
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +118,7 @@ GameObject:
   - component: {fileID: 4183160005752761970}
   - component: {fileID: 4183160005752761971}
   - component: {fileID: 4183160005752761980}
+  - component: {fileID: 8534397154997494442}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -188,6 +201,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &8534397154997494442
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183160005752761982}
+  m_Enabled: 1
+  m_SortingLayerID: 946407189
+  m_SortingLayer: 3
+  m_SortingOrder: 4
 --- !u!1 &4183160005965932692
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +268,7 @@ GameObject:
   - component: {fileID: 4183160006057603097}
   - component: {fileID: 4183160006057603098}
   - component: {fileID: 4183160006057603099}
+  - component: {fileID: 7276614422469922305}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -325,6 +350,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &7276614422469922305
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183160006057603109}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4183160006175974034
 GameObject:
   m_ObjectHideFlags: 0

@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 7973804508303361295}
   - component: {fileID: 7973804508303361294}
   - component: {fileID: 7973804508303361293}
+  - component: {fileID: 4440529190030562339}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -297,6 +298,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &4440529190030562339
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973804508303361291}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
 --- !u!1 &7973804508777975669
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +321,7 @@ GameObject:
   - component: {fileID: 7973804508777975625}
   - component: {fileID: 7973804508777975624}
   - component: {fileID: 7973804508777975671}
+  - component: {fileID: 7646131069609596443}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -390,6 +403,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &7646131069609596443
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973804508777975669}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
 --- !u!1 &7973804508801546750
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +599,7 @@ GameObject:
   - component: {fileID: 7973804509013992603}
   - component: {fileID: 7973804509013992602}
   - component: {fileID: 7973804509013992601}
+  - component: {fileID: 244363646343249812}
   m_Layer: 0
   m_Name: Road (1)
   m_TagString: Untagged
@@ -590,7 +615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7973804509013992583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.91, y: 7.593849, z: -5.044218}
+  m_LocalPosition: {x: -35, y: 7.59, z: -5.044218}
   m_LocalScale: {x: 27.619858, y: 0.01, z: 12}
   m_Children:
   - {fileID: 7973804508777975670}
@@ -657,6 +682,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &244363646343249812
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973804509013992583}
+  m_Enabled: 1
+  m_SortingLayerID: 1567068527
+  m_SortingLayer: 1
+  m_SortingOrder: 3
 --- !u!1 &7973804509064830759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1235,7 @@ GameObject:
   - component: {fileID: 7973804509778618459}
   - component: {fileID: 7973804509778618458}
   - component: {fileID: 7973804509778618457}
+  - component: {fileID: 3800906423093408828}
   m_Layer: 0
   m_Name: Road (2)
   m_TagString: Untagged
@@ -1281,6 +1318,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &3800906423093408828
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973804509778618439}
+  m_Enabled: 1
+  m_SortingLayerID: 1567068527
+  m_SortingLayer: 1
+  m_SortingOrder: 4
 --- !u!1 &7973804509858529719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1595,7 @@ GameObject:
   - component: {fileID: 7973804510271370468}
   - component: {fileID: 7973804510271370467}
   - component: {fileID: 7973804510271370466}
+  - component: {fileID: 6359113139052409000}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -1629,6 +1678,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &6359113139052409000
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973804510271370464}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!1001 &254818937429986879
 PrefabInstance:
   m_ObjectHideFlags: 0

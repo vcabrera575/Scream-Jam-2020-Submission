@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Waypoint
   - Enemy
+  - Candy
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Road
+    uniqueID: 1567068527
+    locked: 0
+  - name: RoadLines
+    uniqueID: 2257219897
+    locked: 0
+  - name: Plane
+    uniqueID: 946407189
     locked: 0

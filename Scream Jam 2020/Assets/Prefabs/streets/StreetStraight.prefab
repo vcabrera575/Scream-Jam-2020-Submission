@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 4361174300758334864}
   - component: {fileID: 4361174300758334863}
   - component: {fileID: 4361174300758334862}
+  - component: {fileID: 6071232381650483319}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -187,6 +188,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!210 &6071232381650483319
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361174300758334860}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4361174301220753239
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +281,7 @@ GameObject:
   - component: {fileID: 4361174302064836331}
   - component: {fileID: 4361174302064836330}
   - component: {fileID: 4361174302064836329}
+  - component: {fileID: 2210111933867703609}
   m_Layer: 0
   m_Name: RoadLines
   m_TagString: Untagged
@@ -350,6 +363,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &2210111933867703609
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361174302064836327}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
 --- !u!1 &4361174302617649719
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,6 +386,7 @@ GameObject:
   - component: {fileID: 4361174302617649723}
   - component: {fileID: 4361174302617649722}
   - component: {fileID: 4361174302617649721}
+  - component: {fileID: 1394312416405891277}
   m_Layer: 0
   m_Name: Road (3)
   m_TagString: Untagged
@@ -444,6 +469,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!210 &1394312416405891277
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361174302617649719}
+  m_Enabled: 1
+  m_SortingLayerID: 1567068527
+  m_SortingLayer: 1
+  m_SortingOrder: 1
 --- !u!1 &5989701529952590573
 GameObject:
   m_ObjectHideFlags: 0
