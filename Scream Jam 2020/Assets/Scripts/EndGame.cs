@@ -14,7 +14,7 @@ public class EndGame : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         //get current score
-        currentScore = text.candy;
+        currentScore = text.highScore + text.candy;
         //get highscore
         highScore = PlayerPrefs.GetInt("highscore", 0);
 

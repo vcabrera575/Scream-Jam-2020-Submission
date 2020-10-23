@@ -659,7 +659,7 @@ MonoBehaviour:
   hasEaten: 0
   isSick: 0
   sickSpeed: 5
-  highScore: 2
+  highScore: 0
   UserInterface: {fileID: 1878891632}
   PauseScreen: {fileID: 915299923}
   scoreText: {fileID: 157079910}

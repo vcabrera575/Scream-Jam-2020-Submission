@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     public bool hasEaten = false;
     public bool isSick = false;
     public float sickSpeed = 8f;
-    public float highScore = 2f;
+    public int highScore = 2;
 
     // Game states
     bool inProgress = true;
