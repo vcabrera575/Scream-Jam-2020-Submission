@@ -5700,8 +5700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -25.6, y: 99.83}
-  m_SizeDelta: {x: 734.47504, y: -512.11}
+  m_AnchoredPosition: {x: -32.23, y: 99.83}
+  m_SizeDelta: {x: 721.2222, y: -512.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469568332
 MonoBehaviour:
@@ -5735,7 +5735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'High Score: '
+  m_Text: 'High Score: 0'
 --- !u!222 &1469568333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6242,7 +6242,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TRICK WITH A TREAT
+  m_Text: HALLOWEEN NIGHT
 --- !u!222 &1799238222
 CanvasRenderer:
   m_ObjectHideFlags: 0
