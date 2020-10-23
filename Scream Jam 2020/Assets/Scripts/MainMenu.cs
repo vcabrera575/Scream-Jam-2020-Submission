@@ -2,6 +2,14 @@
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    public bool showCredits = false;
+    Camera mainCamera;
+
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -9,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
@@ -19,7 +27,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowCredits()
     {
-
+        mainCamera.GetComponent<MainMenuControl>().ToggleCredits();
     }
 
     public void ResetScore()
