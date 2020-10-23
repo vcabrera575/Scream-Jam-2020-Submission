@@ -119,7 +119,7 @@ public class FollowerScript : MonoBehaviour
         if (searchTime <= 0)
         {
             chaseState = Chase.Wandering;
-            Debug.Log("Wandering");
+
             //sound
             audio.Stop();
             audio.PlayOneShot(wanderSound, 0.15f);

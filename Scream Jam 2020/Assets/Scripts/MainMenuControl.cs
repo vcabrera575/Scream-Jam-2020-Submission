@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class MainMenuControl : MonoBehaviour
 {
-    public MainMenu creditButton;
-    public MainMenu quitCreditButton;
     public Text highScoreText;
     public Canvas credits;
     public Canvas mainMenu;
@@ -14,7 +12,6 @@ public class MainMenuControl : MonoBehaviour
     bool creditsShowing = false;
 
     public Camera mainCamera;
-    public Transform follower;
 
     // Start is called before the first frame update
     void Start()
@@ -52,12 +49,6 @@ public class MainMenuControl : MonoBehaviour
         highScore = PlayerPrefs.GetInt("highscore", 0);
 
         highScoreText.text = "High Score: " + highScore;
-
-        if (creditButton.showCredits)
-        {
-            // Show credits
-            credits.gameObject.SetActive(true);
-        }
 
     }
 }

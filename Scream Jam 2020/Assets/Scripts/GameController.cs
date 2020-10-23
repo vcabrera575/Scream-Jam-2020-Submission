@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     public bool hasEaten = false;
     public bool isSick = false;
     public float sickSpeed = 8f;
-    public int highScore = 2;
+    public int highScore = 0;
 
     // Game states
     bool inProgress = true;
@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour
             // Canvas disable
             UserInterface.gameObject.SetActive(false);
             PauseScreen.gameObject.SetActive(true);
-            scoreText.text = "High Score: " + highScore.ToString();
+            scoreText.text = "Current Score: " + highScore.ToString();
         }
         else
         {
@@ -149,8 +149,11 @@ public class GameController : MonoBehaviour
     // Go back to the main menu
     public void QuitGame()
     {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         SceneManager.LoadScene(0);
     }
+
 
 
     // Check to see how full the player is. 
@@ -245,6 +248,11 @@ public class GameController : MonoBehaviour
     public void Caught()
     {
         gameEnded = true;
+
+        // Enable the cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         SceneManager.LoadScene(2);
     }
 }

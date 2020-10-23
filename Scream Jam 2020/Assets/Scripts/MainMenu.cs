@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        GetComponent<MainMenu>().enabled = true;
     }
 
     public void PlayGame()
@@ -34,4 +35,5 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
+
 }

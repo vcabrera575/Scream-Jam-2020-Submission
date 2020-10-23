@@ -44,11 +44,13 @@ public class Door : MonoBehaviour
                 doorLightOne.enabled = false;
                 doorLightTwo.enabled = false;
                 openTimer = gameController.openCooldown;
+
+                //alert follower to your location but ONLY when the door was opened
+                GameObject.FindGameObjectWithTag("Enemy").GetComponent<FollowerScript>().FindPlayer();
             }
             knockTimer = gameController.knockCooldown;
+
         }
-        //alert follower to your location
-        GameObject.FindGameObjectWithTag("Enemy").GetComponent<FollowerScript>().FindPlayer();
     }
 
     //makes candy and throws it at the player
