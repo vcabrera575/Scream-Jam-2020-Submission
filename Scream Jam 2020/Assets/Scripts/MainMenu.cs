@@ -2,13 +2,6 @@
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public Camera mainCamera;
-
-    void Start()
-    {
-        mainCamera = Camera.main;
-    }
-
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -29,15 +22,8 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void ChangeMusic()
+    public void ResetScore()
     {
-
+        PlayerPrefs.DeleteAll();
     }
-
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "Menu")
-            mainCamera.transform.Rotate(0, 3f * Time.deltaTime, 0);
-    }
-
 }
