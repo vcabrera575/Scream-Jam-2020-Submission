@@ -15,6 +15,8 @@ public class ChangeInteriorTexture : MonoBehaviour
         int rand = Random.Range(0, textures.Length);
 
         rend.material.mainTexture = textures[rand];
+
+        rend.material.shader = Shader.Find("Sprites/Default");
     }
 
 }
