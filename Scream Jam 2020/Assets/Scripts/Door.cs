@@ -22,7 +22,7 @@ public class Door : MonoBehaviour
 
     public AudioSource doorSoundSource;
     public AudioClip doorSound;
-    public float volume = 1f;
+    public float volume = .01f;
 
     public Light doorLightOne;
     public Light doorLightTwo;

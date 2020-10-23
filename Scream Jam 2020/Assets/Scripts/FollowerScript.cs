@@ -51,7 +51,7 @@ public class FollowerScript : MonoBehaviour
     {
         if (!audio.isPlaying)
         {
-            audio.PlayOneShot(chaseSound, 0.5f);
+            audio.PlayOneShot(chaseSound, 0.15f);
         }
         //transform.LookAt(player.position);
         agent.speed = gameController.followerSpeed;
@@ -111,7 +111,7 @@ public class FollowerScript : MonoBehaviour
                     chaseState = Chase.Chasing;
                     searchTime = searchTimeMax;
                     //sound
-                    audio.PlayOneShot(searchSound, 0.7f);
+                    audio.PlayOneShot(searchSound, 0.15f);
                 }
             }
         }
@@ -122,10 +122,7 @@ public class FollowerScript : MonoBehaviour
             Debug.Log("Wandering");
             //sound
             audio.Stop();
-            audio.PlayOneShot(wanderSound, 0.7f);
-
-            // Change the music
-            ChangeMusic();
+            audio.PlayOneShot(wanderSound, 0.15f);
         }
     }
 
@@ -133,7 +130,7 @@ public class FollowerScript : MonoBehaviour
     {
         if (!audio.isPlaying)
         {
-            audio.PlayOneShot(wanderSound, 1f);
+            audio.PlayOneShot(wanderSound, 0.15f);
         }
         //if all waypoints are visited reset them
         int visitedCount = 0;
@@ -212,10 +209,8 @@ public class FollowerScript : MonoBehaviour
                 chaseState = Chase.Chasing;
                 //sound
                 audio.Stop();
-                audio.PlayOneShot(searchSound, 0.7f);
+                audio.PlayOneShot(searchSound, 0.15f);
 
-                // Change the music
-                ChangeMusic();
             }
 
         }
@@ -246,20 +241,10 @@ public class FollowerScript : MonoBehaviour
     }
     void ChangeMusic()
     {
-        //int currentTime = playerAudio.timeSamples;
-        //Debug.Log("Current state: " + chaseState);
-        //if (chaseState == Chase.Chasing)
-        //{
-        //    playerAudio.clip = chasingSong;
-        //    playerAudio.timeSamples = currentTime;
-        //    playerAudio.Play();
-        //}
-        //else
-        //{
-        //    playerAudio.clip = regularSong;
-        //    playerAudio.timeSamples = currentTime;
-        //    playerAudio.Play();
-        //}
+
+        playerAudio.clip = chasingSong;
+        playerAudio.Play();
+
     }
 
 }

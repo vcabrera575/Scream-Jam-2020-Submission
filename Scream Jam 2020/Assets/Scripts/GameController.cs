@@ -103,6 +103,7 @@ public class GameController : MonoBehaviour
         if (followerSpeedBoostTimer >= 60)
         {
             followerSpeed += 1f;
+            followerSpeedBoostTimer = 0;
         }
     }
 
