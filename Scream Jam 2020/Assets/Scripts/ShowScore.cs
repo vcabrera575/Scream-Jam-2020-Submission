@@ -16,6 +16,6 @@ public class ShowScore : MonoBehaviour
     {
         int score = PlayerPrefs.GetInt("score", 0);
         int hiscore = PlayerPrefs.GetInt("highscore", 0);
-        txt.text = "Your Score: " + score.ToString() + "\n" + "The Highscore: " + hiscore.ToString();
+        txt.text = "Your got " + score.ToString() + " candy!\n" + "The Highscore: " + hiscore.ToString();
     }
 }

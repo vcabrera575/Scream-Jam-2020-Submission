@@ -6,7 +6,7 @@ public class EndGame : MonoBehaviour
 {
     public static int currentScore;
     public static int highScore;
-    public GameController text;
+    public GameController gameController;
 
     private void GameEnd()
     {
@@ -14,7 +14,7 @@ public class EndGame : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         //get current score
-        currentScore = text.highScore + text.candy;
+        currentScore = gameController.highScore + gameController.candy;
         //get highscore
         highScore = PlayerPrefs.GetInt("highscore", 0);
 
@@ -33,7 +33,7 @@ public class EndGame : MonoBehaviour
     {
         Vector3 player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
         float dist = Vector3.Distance(player, transform.position);
-        if (dist < 3f)
+        if (dist < 3f && gameController.candy > 0)
             GameEnd();
     }
 }
