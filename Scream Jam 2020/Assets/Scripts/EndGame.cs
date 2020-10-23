@@ -33,7 +33,8 @@ public class EndGame : MonoBehaviour
     {
         Vector3 player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
         float dist = Vector3.Distance(player, transform.position);
-        if (dist < 3f && gameController.candy > 0)
+        Debug.Log("High Score: " + gameController.highScore);
+        if (dist < 3f && (gameController.candy > 0 || gameController.highScore > 0))
             GameEnd();
     }
 }

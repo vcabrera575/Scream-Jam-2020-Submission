@@ -44,6 +44,7 @@ public class FollowerScript : MonoBehaviour
         //get initial player position
         playerPos = player.position;
 
+
         //get array of waypoints
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
     }
@@ -186,8 +187,6 @@ public class FollowerScript : MonoBehaviour
             chaseState = Chase.Chasing;
             playerPos = player.position;
 
-            // Change the Music
-            ChangeMusic();
         }
         //chasing player
         if (chaseState == Chase.Chasing && gameController.followPlayer)
@@ -238,13 +237,6 @@ public class FollowerScript : MonoBehaviour
         playerPos = player.position;
         //start chasing
         chaseState = Chase.Chasing;
-    }
-    void ChangeMusic()
-    {
-
-        playerAudio.clip = chasingSong;
-        playerAudio.Play();
-
     }
 
 }

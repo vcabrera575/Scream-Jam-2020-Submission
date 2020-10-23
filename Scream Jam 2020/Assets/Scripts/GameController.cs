@@ -125,7 +125,7 @@ public class GameController : MonoBehaviour
             // Canvas disable
             UserInterface.gameObject.SetActive(false);
             PauseScreen.gameObject.SetActive(true);
-            scoreText.text = "Current Score: " + highScore.ToString();
+            scoreText.text = "Current Score: " + (highScore + candy).ToString();
         }
         else
         {

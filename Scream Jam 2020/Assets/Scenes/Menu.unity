@@ -6592,7 +6592,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Creators:\r Zegaren\r & Famicon\r"
+  m_Text: "Creators:\r Zegaren\r & Famicon\r80"
 --- !u!222 &1677600837
 CanvasRenderer:
   m_ObjectHideFlags: 0
