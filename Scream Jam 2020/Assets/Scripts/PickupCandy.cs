@@ -34,7 +34,7 @@ public class PickupCandy : MonoBehaviour
     void Update()
     {
         Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        if (Vector3.Distance(playerPosition, transform.position) <= 2f)
+        if (GameObject.FindGameObjectWithTag("Player")!=null && Vector3.Distance(playerPosition, transform.position) <= 2f)
         {
             GameObject.Find("GameController").GetComponent<GameController>().GetCandy(value);
             Destroy(gameObject);
