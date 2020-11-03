@@ -45,3 +45,8 @@ Thumbs.db
 ##
 *.ttf
 *.ttf.meta 
+
+##
+# Textures
+## 
+[Aa]ssets/Textures*
